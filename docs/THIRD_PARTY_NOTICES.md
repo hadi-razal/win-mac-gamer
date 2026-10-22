@@ -1,0 +1,13 @@
+# Third-party components
+
+LocalPlay does not bundle Wine, DXMT, Steam, GStreamer, Rosetta, Apple Game Porting Toolkit, or commercial wrapper components. It downloads Wine and DXMT separately from their official release sources. Keep their original notices and licenses with installed files. No license is granted to games or Steam by this project.
+
+- WineCX 24.0.7 revision 7: free Wine engine from https://github.com/Sikarugir-App/Engines/releases/tag/v1.0 . Wine is LGPL-2.1-or-later, with component-specific notices. CodeWeavers publishes the corresponding CrossOver Wine open source at https://media.codeweavers.com/pub/crossover/source/ . Engine modifications and sources: https://github.com/Gcenx/wine . Original Wine: https://gitlab.winehq.org/wine/wine . This engine is used independently of the commercial CrossOver app. Packaging dependencies have separate terms; retain the release’s original notices. Do not infer that any proprietary Sikarugir wrapper/launcher is covered by Wine's LGPL; no such wrapper is used by LocalPlay.
+- DXMT 0.80: last MIT-licensed release, with separate third-party licenses. Exact release and corresponding source: https://github.com/3Shain/dxmt/releases/tag/v0.80 . Subsequent development changed to LGPL; do not relabel later builds as MIT. Original license: https://github.com/3Shain/dxmt/blob/v0.80/LICENSE .
+- Steam: proprietary, Valve’s installer and subscriber agreement apply. https://store.steampowered.com/about/ . Download: https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe . Users complete installation and sign-in themselves. LocalPlay does not collect passwords.
+- GStreamer 1.28.5: LGPL core with plugin-specific terms. https://gstreamer.freedesktop.org/documentation/installing/on-mac-osx.html . Setup downloads the official universal package, validates its Apple package signature, and extracts its framework payload into LocalPlay. No system package installation or installer scripts are run. Relocation needs validation with Wine; upstream documents system-wide installation. Source: https://gstreamer.freedesktop.org/src/ .
+- Rosetta: Apple system software, obtained through Apple’s normal installation flow. Not redistributed.
+
+No D3DMetal or Apple Game Porting Toolkit binaries are included. Those have separate Apple terms and are not a fallback backend here. No commercial CrossOver files are used.
+
+Local builds are ad-hoc signed. Distribution to other users requires a signing identity, a reviewed signing strategy for downloaded runtime components, and notarization. LocalPlay does not remove quarantine, disable Gatekeeper/SIP, or re-sign downloaded components to evade macOS security review.

@@ -1,0 +1,10 @@
+.build/
+dist/
+.localplay-dev/
+.DS_Store
+*.xcuserstate
+.env
+.env.*
+!.env.example
+*.log
+.swiftpm/
